@@ -4,6 +4,8 @@ const nunjucks = require('nunjucks');
 const app = express();
 const port = 3000;
 
+app.use('/static', express.static(path.join(__dirname, 'static')));
+
 nunjucks.configure('views', {
     autoescape: true,
     express: app
