@@ -1,0 +1,23 @@
+{
+  "name": "aam-hindustani",
+  "version": "1.0.0",
+  "description": "a website to host my writings in a more common, less Sanskritized and less PErsianized register of Hindustani.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hi101000/aam-hindustani.git"
+  },
+  "author": "",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/hi101000/aam-hindustani/issues"
+  },
+  "homepage": "https://github.com/hi101000/aam-hindustani#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nunjucks": "^3.2.4"
+  }
+}
