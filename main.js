@@ -13,7 +13,7 @@ nunjucks.configure('views', {
 });
 
 app.get('/', (req, res) => {
-    res.render('index.html');
+    res.render('index.njk');
 });
 
 app.listen(port, () => {

@@ -4,7 +4,8 @@
   "description": "a website to host my writings in a more common, less Sanskritized and less PErsianized register of Hindustani.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/hi101000/aam-hindustani#readme",
   "dependencies": {
     "express": "^5.2.1",
+    "mongodb": "^7.1.0",
     "nunjucks": "^3.2.4"
   }
 }
