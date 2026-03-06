@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/hi101000/aam-hindustani#readme",
   "dependencies": {
+    "@upstash/redis": "^1.36.3",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "mongodb": "^7.1.0",
     "nunjucks": "^3.2.4"
