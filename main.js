@@ -17,17 +17,18 @@ nunjucks.configure('views', {
     express: app
 });
 
-app.get('/', (req, res) => {
-    res.render('index.njk');
+app.get('/', async (req, res) => {
+    const articleDetails = await redis.json.mget(await redis.keys('*'), '$');
+    res.render('index.njk', { articles: articleDetails });
 });
 
-app.get('/test', async (req, res) => {
-    try {
-        const result = await redis.get("Articles");
-        res.send(`Value from Redis: ${result}`);
-    } catch (error) {
-        console.error('Error interacting with Redis:', error);
-        res.status(500).send('Error interacting with Redis');
+app.get('/article/:id', async (req, res) => {
+    const articleId = req.params.id;
+    const article = await redis.get(`article:${articleId}`);
+    if (article) {
+        res.render('article.njk', { article: JSON.parse(article) });
+    } else {
+        res.status(404).send('Article not found');
     }
 });
 

@@ -2,14 +2,47 @@
     <head>
         <title>Aam Hindustani</title>
         <link rel="stylesheet" href="/static/styles.css">
+        <style>
+            .article-link-index {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+            .article-link-index:hover {
+                background-color: #f0f0f0;
+            }
+            .article-link-index a {
+                text-decoration: none;
+                color: #333;
+            }
+            .article-link-index h2 {
+                margin: 0;
+                font-size: 1.5em;
+            }
+            .article-link-index p {
+                margin: 5px 0 0;
+                color: #666;
+            }
+        </style>
     </head>
     <body>
         <div class="topbar">
-            <a href="/">Home - मुँहपन्ना</a>
+            <a href="/">Home - मुखिया पन्ना</a>
             <a href="/about">About - इसके बारे में</a>
         </div>
         <div>
             <h1>Welcome to Aam Hindustani</h1>
+            {% for article in articles %}
+                <div class="article-link-index">
+                    <a href="https://drive.google.com/file/d/{{ article[0].url }}/preview">
+                        <h2>{{ article[0].title }}</h2>
+                        <p>{{ article[0].date }}</p>
+                        <p>{{ article[0].desc }}</p>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </body>
 </html>
