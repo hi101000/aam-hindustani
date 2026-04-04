@@ -3,8 +3,6 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 const { Redis } = require("@upstash/redis");
 
-require('dotenv').config({ path: './.env.local' });
-
 const redis = Redis.fromEnv();
 
 const app = express();
